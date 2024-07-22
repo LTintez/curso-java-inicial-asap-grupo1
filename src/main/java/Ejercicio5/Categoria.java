@@ -1,31 +1,19 @@
 package Ejercicio5;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Categoria {
+    private int categoriaId;
+    private String nombre;
 
-    public int id;
-    public String nombre;
-    public List<Curso> cursos;
-
-    public Categoria(int id, String nombre){
-        this.id = id;
+    public Categoria(int categoriaId, String nombre) {
+        this.categoriaId = categoriaId;
         this.nombre = nombre;
-        this.cursos = new ArrayList<>();
     }
 
-
-    public Curso buscarCurso(int id) {
-        for (Curso curso : cursos) {
-            if (curso.getCursoId() == id) {
-                return curso;
-            }
-        }
-        return null;
+    public int getCategoriaId() {
+        return categoriaId;
     }
 
-    public void agregarCurso(Curso curso) {
-        cursos.add(curso);
+    public String getNombre() {
+        return nombre;
     }
 }

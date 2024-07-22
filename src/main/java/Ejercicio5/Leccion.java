@@ -1,11 +1,19 @@
 package Ejercicio5;
 
 public class Leccion {
-    public String nombre;
-    public double duracion;
+    private String titulo;
+    private int duracion; // en minutos
 
-    public Leccion(String nombre, double duracion){
-        this.nombre = nombre;
+    public Leccion(String titulo, int duracion) {
+        this.titulo = titulo;
         this.duracion = duracion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getDuracion() {
+        return duracion;
     }
 }
