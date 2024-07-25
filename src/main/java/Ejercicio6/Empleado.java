@@ -4,7 +4,7 @@ public abstract class Empleado {
     private String dni;
     private String nombre;
     private String apellido;
-    private int anioIngreso;
+    public int anioIngreso;
 
     public Empleado(String dni, String nombre, String apellido, int anioIngreso) {
         this.dni = dni;
@@ -12,8 +12,11 @@ public abstract class Empleado {
         this.apellido = apellido;
         this.anioIngreso = anioIngreso;
     }
-    
-    
 
+    public abstract double mostrarSalario();
+
+    public String getNombreCompleto(){
+        return nombre + " " + apellido;
+    }
 
 }

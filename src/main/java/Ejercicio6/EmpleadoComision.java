@@ -7,10 +7,20 @@ public class EmpleadoComision extends Empleado {
 
 	    public EmpleadoComision(String dni, String nombre, String apellido, int anioIngreso,double salarioMinimo, int clientesCaptados, double montoPorCliente) {
 	        super(dni, nombre, apellido, anioIngreso);
-	        this.salarioMinimo = 20000;
+	        this.salarioMinimo = 18000;
 	        this.clientesCaptados = clientesCaptados;
 	        this.montoPorCliente = montoPorCliente;
 	    }
+
+		@Override
+		public double mostrarSalario(){
+			double salario = clientesCaptados * montoPorCliente;
+			return Math.max(salario, salarioMinimo);
+		}
+
+		public int getClientesCaptados(){
+			return clientesCaptados;
+		}
 		
 }
 
