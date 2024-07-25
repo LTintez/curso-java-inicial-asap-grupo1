@@ -12,7 +12,9 @@ public class EmpleadoComision extends Empleado {
 	        this.montoPorCliente = montoPorCliente;
 	    }
 
-		@Override
+
+
+	@Override
 		public double mostrarSalario(){
 			double salario = clientesCaptados * montoPorCliente;
 			return Math.max(salario, salarioMinimo);
