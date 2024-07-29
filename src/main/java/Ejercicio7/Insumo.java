@@ -21,7 +21,7 @@ public class Insumo implements Facturable {
     }
 
     @Override
-    public double montoFacturacion() {
+    public double getMontoFacturacion() {
         return 0;
     }
 }

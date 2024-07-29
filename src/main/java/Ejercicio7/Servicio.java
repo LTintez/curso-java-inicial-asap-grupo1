@@ -1,8 +1,8 @@
 package Ejercicio7;
 
-public class Servicio implements Facturable {
+public abstract class Servicio implements Facturable {
     private String nombre;
-    private int cantHoras;
+    public int cantHoras;
 
     public Servicio(String nombre, int cantHoras){
         this.nombre = nombre;
@@ -10,7 +10,7 @@ public class Servicio implements Facturable {
     }
 
     @Override
-    public double montoFacturacion() {
+    public double getMontoFacturacion() {
         return 0;
     }
 
@@ -22,6 +22,6 @@ public class Servicio implements Facturable {
         return this.cantHoras * getValorHora();
     };
 
-    //get precio;
+    public abstract double getPrecio();
     //get valorHora;
 }

@@ -8,6 +8,10 @@ public class ServicioArmado  extends Servicio{
         super(nombre, horas);
     }
 
+    @Override
+    public double getPrecio() {
+        return cantHoras * VALOR_HORA;
+    }
 
 
 

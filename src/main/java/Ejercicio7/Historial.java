@@ -3,7 +3,7 @@ package Ejercicio7;
 public class Historial implements Facturable {
 
     @Override
-    public double montoFacturacion() {
+    public double getMontoFacturacion() {
         return 0;
     }
 }
