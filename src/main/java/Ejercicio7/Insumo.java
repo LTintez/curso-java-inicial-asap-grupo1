@@ -1,6 +1,7 @@
 package Ejercicio7;
 
-public class Insumo {
+
+public class Insumo implements Facturable {
     private int id;
     private String nombre;
     private TipoInsumo tipo;
@@ -17,5 +18,10 @@ public class Insumo {
 
     public TipoInsumo getTipo(){
         return tipo;
+    }
+
+    @Override
+    public double montoFacturacion() {
+        return 0;
     }
 }
