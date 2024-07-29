@@ -14,14 +14,17 @@ public abstract class Servicio implements Facturable {
         return 0;
     }
 
-    public double getValorHora() {
-        return 0;
+    public int getCantHoras() {
+        return cantHoras;
     }
+
+    public abstract  double getValorHora();
 
     public double calcularPrecio(){
         return this.cantHoras * getValorHora();
     };
 
-    public abstract double getPrecio();
-    //get valorHora;
+    public double getPrecio() {
+        return getCantHoras() * getValorHora();
+    }
 }
