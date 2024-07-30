@@ -10,4 +10,17 @@ public class Vehiculo {
         this.marca = marca;
         this.cilindrada = cilindrada;
     }
+    
+    public String getPatente() {
+    	return patente;
+    }
+    
+    public String getMarca() {
+    	return marca;
+    }
+    
+    public int getCilindrada() {
+    	return cilindrada;
+    }
+    
 }
