@@ -14,11 +14,11 @@ public class ServicioDeReparacion extends Servicio{
         this.dificultad = dificultad;
     }
 
-    @Override
-    public double getPrecio() {
-        double precioBase = super.getPrecio();
-        return this.dificultad > MIN_DIFIC ? Matematica.sumarPorcentaje(precioBase, INCR_DIF) : precioBase;
-    }
+    //@Override
+    //public double getPrecio() {
+    //    double precioBase = super.getPrecio();
+    //    return this.dificultad > MIN_DIFIC ? Matematica.sumarPorcentaje(precioBase, INCR_DIF) : precioBase;
+    //}
 
     @Override
     public double getValorHora() {
