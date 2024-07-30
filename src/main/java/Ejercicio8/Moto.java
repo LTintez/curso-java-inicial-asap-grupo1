@@ -8,7 +8,7 @@ public class Moto extends Vehiculo{
         this.tieneEspejos = tieneEspejos;
     }
 
-    public boolean isTodosEspejos() {
+    public boolean isTieneEspejos() {
         return tieneEspejos;
     }
 }
