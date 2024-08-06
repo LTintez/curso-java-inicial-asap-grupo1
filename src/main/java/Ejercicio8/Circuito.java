@@ -3,23 +3,23 @@ package Ejercicio8;
 class Circuito implements Evaluable {
     private static final int NUMERO_FALTAS_PERMITIDAS = 2;
     private int tiempoEnSeg;
-    private int faltas;
+    private int nroFaltas;
 
-    public Circuito(int tiempoEnSeg, int faltas) {
+    public Circuito(int tiempoEnSeg, int nroFaltas) {
         this.tiempoEnSeg = tiempoEnSeg;
-        this.faltas = faltas;
+        this.nroFaltas = nroFaltas;
     }
 
     public int getTiempoEnSeg() {
         return tiempoEnSeg;
     }
 
-    public int getFaltas() {
-        return faltas;
+    public int getNroFaltas() {
+        return nroFaltas;
     }
 
     @Override
     public boolean isAprobado() {
-        return faltas <= NUMERO_FALTAS_PERMITIDAS;
+        return nroFaltas <= NUMERO_FALTAS_PERMITIDAS;
     }
 }
