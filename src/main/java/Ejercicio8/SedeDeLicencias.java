@@ -16,35 +16,44 @@ public class SedeDeLicencias {
         this.examenes.add(examen);
     }
 
-    public String obtenerInforme(){
-        double porcentajeDeReprobados = porcentajeDeReprobados();
+    public String obtenerInforme() {
+        double porcReprobados = porcentajeDeReprobados();
         double promTiempoAutosAprobados = promTiempoAutosAprobados();
-        Informe informe = new Informe(porcentajeDeReprobados, promTiempoAutosAprobados);
+
         Gson gson = new Gson();
-        return gson.toJson(informe);
+        return gson.toJson(new Informe(porcReprobados, promTiempoAutosAprobados));
     }
 
     private double porcentajeDeReprobados() {
+        int reprobados = 0;
         int totalExamenes = examenes.size();
-        int examenesReprobados = 0;
+
         for (Examen examen : examenes) {
             if (!examen.isAprobado()) {
-                examenesReprobados++;
+                reprobados++;
             }
         }
-        return ((double) examenesReprobados / totalExamenes) * 100;
+
+        return totalExamenes > 0 ? (reprobados * 100.0) / totalExamenes : 0;
     }
 
     private double promTiempoAutosAprobados() {
         int totalTiempo = 0;
         int count = 0;
+
         for (Examen examen : examenes) {
-            if (examen instanceof ExamenDeAuto && examen.isAprobado()) {
-                totalTiempo += ((ExamenDeAuto) examen).getTiempoDelCircuito();
-                count++;
+            if (examen instanceof ExamenDeAuto) {
+                ExamenDeAuto examenAuto = (ExamenDeAuto) examen;
+                if (examenAuto.isAprobado()) {
+                    totalTiempo += examenAuto.getTiempoDelCircuito();
+                    count++;
+                }
             }
         }
-        return count > 0 ? (double) totalTiempo / count : 0;
+
+        double promedio = count > 0 ? (double) totalTiempo / count : 0.0;
+
+        return promedio;
     }
 
 }

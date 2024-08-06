@@ -4,7 +4,7 @@ public class ExamenDeAuto extends Examen {
     private static final int TIEMPO_MAXIMO_PERMITIDO = 90;
     private Auto auto;
 
-    public ExamenDeAuto(String fecha, Persona persona, Circuito circuito, Auto auto){
+    public ExamenDeAuto(String fecha, Persona persona, Circuito circuito, Auto auto) {
         super(fecha, persona);
         this.circuitos.add(circuito);
         this.auto = auto;

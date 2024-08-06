@@ -2,30 +2,24 @@ package Ejercicio8;
 
 class Circuito implements Evaluable {
     private static final int NUMERO_FALTAS_PERMITIDAS = 2;
-    private int tiempo;
     private int tiempoEnSeg;
-    private int numeroFaltas;
+    private int faltas;
 
-    public Circuito(int tiempo, int numeroFaltas) {
-        this.tiempo = tiempo;
-        this.numeroFaltas = numeroFaltas;
+    public Circuito(int tiempoEnSeg, int faltas) {
         this.tiempoEnSeg = tiempoEnSeg;
+        this.faltas = faltas;
     }
 
-    public int getTiempo() {
-        return tiempo;
-    }
-
-    public int getTiempoEnSeg(){
+    public int getTiempoEnSeg() {
         return tiempoEnSeg;
-    };
+    }
 
-    public int getNumeroFaltas() {
-        return numeroFaltas;
+    public int getFaltas() {
+        return faltas;
     }
 
     @Override
     public boolean isAprobado() {
-        return numeroFaltas <= NUMERO_FALTAS_PERMITIDAS;
+        return faltas <= NUMERO_FALTAS_PERMITIDAS;
     }
 }

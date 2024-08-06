@@ -12,7 +12,13 @@ public class ExamenDeMoto extends Examen {
 
     @Override
     public boolean isAprobado() {
-        return false;
+        if (moto.getCilindrada() > 150) {
+            return circuitos.stream().allMatch(Circuito::isAprobado);
+        } else {
+            long circuitosAprobados = circuitos.stream().filter(Circuito::isAprobado).count();
+            int tiempoTotal = circuitos.stream().mapToInt(Circuito::getTiempoEnSeg).sum();
+            return circuitosAprobados >= circuitos.size() - 1 && tiempoTotal <= 120;
+        }
     }
 
     private int cantCircuitosAprobados(){
